@@ -39,6 +39,8 @@
              (guix git-download)
              (guix build-system asdf)
              (gnu packages)
+             (gnu packages autotools)
+             (gnu packages texinfo)
              (gnu packages lisp)
              (gnu packages lisp-xyz)
              (gnu packages lisp-check))
@@ -57,13 +59,28 @@
   (native-inputs
    (list sbcl
          cl-lisp-unit2
-         cl-log4cl))
+         cl-log4cl
+         ;; Building the manual
+         autoconf automake texinfo))
   (inputs
    (list cl-alexandria
          cl-slime-swank
          cl-slynk))
   (build-system asdf-build-system/sbcl)
   ;; (build-system asdf-build-system/source) ;; Maybe use this?
+  (arguments
+     (list
+      #:phases
+      #~(modify-phases %standard-phases
+          (add-after 'install 'install-manual
+            (lambda* (#:key (configure-flags '()) (make-flags '()) outputs
+                      #:allow-other-keys)
+              (let* ((out  (assoc-ref outputs "out"))
+                     (info (string-append out "/share/info")))
+                (invoke "./bootstrap")
+                (apply invoke "sh" "./configure" "SHELL=sh" configure-flags)
+                (apply invoke "make" "info" make-flags)
+                (install-file "doc/tcl2cl.info" info)))))))
   (synopsis "Tcl/Tk to Common Lisp Transpiler")
   (description "Tcl2CL (Tcl/Tk to Common Lisp Transpiler).")
   (home-page "http://github.com/KarlJoad/tcl2cl")
