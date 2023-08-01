@@ -1,0 +1,80 @@
+# Ignore build artifacts
+build/
+
+# Ignore compiled Common-Lisp files
+*.FASL
+*.fasl
+*.fas
+*.lisp-temp
+*.dfsl
+*.pfsl
+*.d64fsl
+*.p64fsl
+*.lx64fsl
+*.lx32fsl
+*.dx64fsl
+*.dx32fsl
+*.fx64fsl
+*.fx32fsl
+*.sx64fsl
+*.sx32fsl
+*.wx64fsl
+*.wx32fsl
+
+# Ignore etags/ctags
+TAGS
+GPATH
+GRTAGS
+GTAGS
+
+# Ignore C object files and libraries
+*.o
+*.so
+*.a
+
+*.log
+*.tmp
+
+# Emacs/Vim Backup/Auto-Save files
+*~
+.#*
+\#*\#
+,*
+
+# MacOS thing
+.DS_Store
+
+# Verilog files
+**.v
+
+# Documentation & Autoconf/Automake stuff
+/aclocal.m4
+/autom4te.cache
+/build-aux
+/config.status
+/configure
+/doc/*.1
+/doc/.dirstamp
+/doc/contributing.*.texi
+/doc/tcl2cl*.aux
+/doc/tcl2cl*.cp
+/doc/tcl2cl*.cps
+/doc/tcl2cl*.fn
+/doc/tcl2cl*.fns
+/doc/tcl2cl*.html
+/doc/tcl2cl*.info
+/doc/tcl2cl*.info-[0-9]
+/doc/tcl2cl*.ky
+/doc/tcl2cl*.pdf
+/doc/tcl2cl*.pg
+/doc/tcl2cl*.toc
+/doc/tcl2cl*.t2p
+/doc/tcl2cl*.tp
+/doc/tcl2cl*.vr
+/doc/tcl2cl*.vrs
+/doc/tcl2cl.*.texi
+/doc/stamp-vti
+/doc/version.texi
+/doc/version-*.texi
+/m4/*
+Makefile
