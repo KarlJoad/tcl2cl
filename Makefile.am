@@ -20,3 +20,5 @@ tcl2cl_tests := tcl2cl.asd $(shell find ./tests/ -type f -name '*.lisp')
 .PHONY: check
 check: $(tcl2cl_files) $(tcl2cl_tests)
 	$(lisp_eval) '(asdf:test-system :tcl2cl)'
+
+include doc/local.mk
