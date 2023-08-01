@@ -1,0 +1,42 @@
+#+TITLE: Tcl2CL: Tcl/Tk to Common Lisp Transpiler
+
+* Tcl2CL --- Tcl/Tk to Common Lisp Transpiler
+
+Read a Tcl/Tk script and convert it to a Common Lisp script.
+
+** Dependencies
+  * A Common Lisp compiler (SBCL preferred)
+    - I am trying to write this in a portable way (as this is mostly a DSL), so any compiler may work.
+  * ASDF (Another System Definition Facility)
+    - This is the *build tool*
+    - It does /*NOT*/ download dependencies for you!
+  * Quicklisp
+    - This is the package management tool for Common Lisp.
+    - Quicklisp plugs into ASDF to download /and/ load/build the source for you.
+  * UIOP (Utilities for Implementation and OS Portability)
+  * Alexandria
+  * [[https://www.cliki.net/log4cl][Log4CL]]
+    - Provides structured logging facilities.
+  * [[https://github.com/AccelerationNet/lisp-unit2][~lisp-unit2~]]
+    - Only needed for testing!
+
+** Building
+Tcl2CL builds using the standard ASDF build system.
+
+*** Building on the REPL
+Make sure ASDF is capable of finding your copy of Tcl2CL.
+   1. ~(asdf:compile-system :tcl2cl)~
+
+If you want to *force* a rebuild, ASDF supports that too.
+~(asdf:compile-system :tcl2cl :force t)~.
+
+** Testing
+Tcl2CL uses lisp-unit2 for its unit testing system.
+
+*** Testing on the REPL
+Make sure ASDF if capable of finding your copy of Tcl2CL and lisp-unit2.
+   * ~(asdf:test-system :tcl2cl)~
+   * ~(lisp-unit2:run-tests :package :tcl2cl/tests)~
+
+* Why?
+I personally felt this when specialty connection operators were required to be defined as experimental in chisel3; operators which I needed to connect hardware together.
