@@ -74,9 +74,21 @@ specifications for various revisions of the language.
 Tcl2CL is documented using the Texinfo system.
 
 @menu
+* Style Guidelines::            Making all code look the same.
 * Submitting Patches::          Sharing your work & improvements.
 * Writing Documentation::       Improving & Writing documentation.
 @end menu
+
+@node Style Guidelines
+@section Style Guidelines
+This project uses
+@uref{https://google.github.io/styleguide/lispguide.xml, Google's Common
+Lisp style guide} as its guideline.  This document is freely available
+online and contains, what I believe, are a good set of default style
+points. Please read this document before submitting your changes to
+ensure all of your modifications meet this style guide.  If your changes
+have a good reason not to follow these guidelines, make sure you
+document @emph{why} with appropriate comments.
 
 @node Submitting Patches
 @section Submitting Patches
