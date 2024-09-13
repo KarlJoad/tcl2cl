@@ -74,7 +74,7 @@
     (list
      #:phases
      #~(modify-phases %standard-phases
-         (add-after 'install 'install-manual
+         (add-after 'check 'install-manual
            (lambda* (#:key (configure-flags '()) (make-flags '()) outputs
                      #:allow-other-keys)
              (let* ((out  (assoc-ref outputs "out"))
