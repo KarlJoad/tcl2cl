@@ -1,0 +1,4 @@
+#+TITLE: Resources
+
+  * [[https://wiki.tcl-lang.org/page/BNF+for+Tcl][TCLang's "Official" BNF]] :: TCL does not technically have a BNF grammar.
+    TCL is a context-sensitive grammar (supposedly), which means it can only be parsed by a Turing-complete program.
